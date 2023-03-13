@@ -5,7 +5,7 @@ lastDigit = 0
 
 if number >= 0:
     lastDigit = number % 10
-    else:
+
         lastDigit = (-number % 10) * -1
 
         message = f"Last digit of {number} is {lastDigit}"
