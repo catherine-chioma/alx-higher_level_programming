@@ -5,7 +5,7 @@
 def matrix_mul(m_a, m_b):
     """Multiply two matrices.
 
-     Args:
+    Args:
         m_a (list of lists of ints/floats): The first matrix.
         m_b (list of lists of ints/floats): The second matrix.
     Raises:
@@ -17,7 +17,7 @@ def matrix_mul(m_a, m_b):
         A new matrix representing the multiplication of m_a by m_b.
     """
 
-if m_a == [] or m_a == [[]]:
+    if m_a == [] or m_a == [[]]:
         raise ValueError("m_a can't be empty")
     if m_b == [] or m_b == [[]]:
         raise ValueError("m_b can't be empty")
@@ -44,10 +44,10 @@ if m_a == [] or m_a == [[]]:
     if not all(len(row) == len(m_b[0]) for row in m_b):
         raise TypeError("each row of m_b must should be of the same size")
 
-    if len(m_a[0]) != len(m_b):
+     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
 
-     inverted_b = []
+    inverted_b = []
     for r in range(len(m_b[0])):
         new_row = []
         for c in range(len(m_b)):
