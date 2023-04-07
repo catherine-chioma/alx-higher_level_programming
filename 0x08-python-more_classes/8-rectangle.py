@@ -22,14 +22,14 @@ class Rectangle:
         """
         type(self).number_of_instances += 1
         self.width = width
-        self.height = height
+        self.height =
 
-         @property
+        @property
     def width(self):
         """Get/set the width of the Rectangle."""
         return self.__width
 
-     @width.setter
+    @width.setter
     def width(self, value):
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -54,13 +54,13 @@ class Rectangle:
         """Return the area of the Rectangle."""
         return (self.__width * self.__height)
 
-    def perimeter(self):
+ def perimeter(self):
         """Return the perimeter of the Rectangle."""
         if self.__width == 0 or self.__height == 0:
             return (0)
         return ((self.__width * 2) + (self.__height * 2))
 
-    @staticmethod
+     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """Return the Rectangle with the greater area.
 
@@ -99,7 +99,7 @@ class Rectangle:
         rect += ", " + str(self.__height) + ")"
         return (rect)
 
-    def __del__(self):
+     def __del__(self):
         """Print a message for every deletion of a Rectangle."""
         type(self).number_of_instances -= 1
         print("Bye rectangle...")

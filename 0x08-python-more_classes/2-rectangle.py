@@ -8,14 +8,14 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         """Initialize a new Rectangle.
 
-         Args:
+Args:
             width (int): The width of the new rectangle.
             height (int): The height of the new rectangle.
         """
         self.width = width
         self.height = height
 
-         @property
+    @property
     def width(self):
         """Get/set the width of the Rectangle."""
         return self.__width
@@ -28,7 +28,7 @@ class Rectangle:
             raise ValueError("width must be >= 0")
         self.__width = value
 
-         @property
+    @property
     def height(self):
         """Get/set the height of the Rectangle."""
         return self.__height
@@ -41,7 +41,7 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = value
 
-        def area(self):
+    def area(self):
         """Return the area of the Rectangle."""
         return (self.__width * self.__height)
 
