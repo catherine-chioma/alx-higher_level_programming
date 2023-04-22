@@ -10,7 +10,7 @@ class Base:
 
      Represents the "base" for all other classes in project 0x0C*.
 
-     ttributes:
+     Attributes:
         __nb_objects (int): The number of instantiated Bases.
     """
 
@@ -19,7 +19,7 @@ class Base:
     def __init__(self, id=None):
         """Initialize a new Base.
 
-        Args:
+         Args:
             id (int): The identity of the new Base.
         """
         if id is not None:
@@ -28,18 +28,18 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
-            @staticmethod
+             @staticmethod
     def to_json_string(list_dictionaries):
         """Return the JSON serialization of a list of dicts.
 
-        Args:
+ Args:
             list_dictionaries (list): A list of dictionaries.
         """
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
         return json.dumps(list_dictionaries)
 
-    @classmethod
+     @classmethod
     def save_to_file(cls, list_objs):
         """Write the JSON serialization of a list of objects to a file.
 
@@ -54,11 +54,11 @@ class Base:
                 list_dicts = [o.to_dictionary() for o in list_objs]
                 jsonfile.write(Base.to_json_string(list_dicts))
 
-    @staticmethod
+ @staticmethod
     def from_json_string(json_string):
         """Return the deserialization of a JSON string.
 
-        Args:
+Args:
             json_string (str): A JSON str representation of a list of dicts.
         Returns:
             If json_string is None or empty - an empty list.
@@ -83,13 +83,13 @@ class Base:
             new.update(**dictionary)
             return new
 
-    @classmethod
+@classmethod
     def load_from_file(cls):
         """Return a list of classes instantiated from a file of JSON strings.
 
  Reads from `<cls.__name__>.json`.
 
-  Returns:
+ Returns:
             If the file does not exist - an empty list.
             Otherwise - a list of instantiated classes.
         """
@@ -121,13 +121,13 @@ class Base:
                 for obj in list_objs:
                     writer.writerow(obj.to_dictionary())
 
-                     @classmethod
+    @classmethod
     def load_from_file_csv(cls):
         """Return a list of classes instantiated from a CSV file.
 
-        Reads from `<cls.__name__>.csv`.
+ Reads from `<cls.__name__>.csv`.
 
-        Returns:
+ Returns:
             If the file does not exist - an empty list.
             Otherwise - a list of instantiated classes.
         """
@@ -145,11 +145,11 @@ class Base:
         except IOError:
             return []
 
-    @staticmethod
+        @staticmethod
     def draw(list_rectangles, list_squares):
         """Draw Rectangles and Squares using the turtle module.
 
-        Args:
+         Args:
             list_rectangles (list): A list of Rectangle objects to draw.
             list_squares (list): A list of Square objects to draw.
         """
@@ -171,7 +171,7 @@ class Base:
                 turt.left(90)
             turt.hideturtle()
 
- turt.color("#b5e3d8")
+        turt.color("#b5e3d8")
         for sq in list_squares:
             turt.showturtle()
             turt.up()

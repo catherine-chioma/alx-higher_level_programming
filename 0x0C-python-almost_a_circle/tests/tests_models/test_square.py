@@ -26,32 +26,32 @@ class TestSquare_instantiation(unittest.TestCase):
     def test_is_base(self):
         self.assertIsInstance(Square(10), Base)
 
-    def test_is_rectangle(self):
+         def test_is_rectangle(self):
         self.assertIsInstance(Square(10), Square)
 
-    def test_no_args(self):
+        def test_no_args(self):
         with self.assertRaises(TypeError):
             Square()
 
-    def test_one_arg(self):
+            def test_one_arg(self):
         s1 = Square(10)
         s2 = Square(11)
         self.assertEqual(s1.id, s2.id - 1)
 
-    def test_two_args(self):
+        def test_two_args(self):
         s1 = Square(10, 2)
         s2 = Square(2, 10)
         self.assertEqual(s1.id, s2.id - 1)
 
-    def test_three_args(self):
+        def test_three_args(self):
         s1 = Square(10, 2, 2)
         s2 = Square(2, 2, 10)
         self.assertEqual(s1.id, s2.id - 1)
 
-    def test_four_args(self):
+         def test_four_args(self):
         self.assertEqual(7, Square(10, 2, 2, 7).id)
 
-    def test_more_than_four_args(self):
+        def test_more_than_four_args(self):
         with self.assertRaises(TypeError):
             Square(1, 2, 3, 4, 5)
 
@@ -62,12 +62,12 @@ class TestSquare_instantiation(unittest.TestCase):
     def test_size_getter(self):
         self.assertEqual(5, Square(5, 2, 3, 9).size)
 
-    def test_size_setter(self):
+         def test_size_setter(self):
         s = Square(4, 1, 9, 2)
         s.size = 8
         self.assertEqual(8, s.size)
 
-    def test_width_getter(self):
+        def test_width_getter(self):
         s = Square(4, 1, 9, 2)
         s.size = 8
         self.assertEqual(8, s.width)
@@ -84,7 +84,7 @@ class TestSquare_instantiation(unittest.TestCase):
         self.assertEqual(0, Square(10).y)
 
 
-class TestSquare_size(unittest.TestCase):
+        class TestSquare_size(unittest.TestCase):
     """Unittests for testing size initialization of the Square class."""
 
     def test_None_size(self):
@@ -99,7 +99,7 @@ class TestSquare_size(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Square(5.5)
 
-    def test_complex_size(self):
+             def test_complex_size(self):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Square(complex(5))
 
@@ -204,7 +204,7 @@ class TestSquare_x(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Square(1, frozenset({1, 2, 3, 1}))
 
-    def test_range_x(self):
+def test_range_x(self):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Square(1, range(5))
 
@@ -252,7 +252,7 @@ class TestSquare_y(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
             Square(1, 3, complex(5))
 
-    def test_dict_y(self):
+            def test_dict_y(self):
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
             Square(1, 1, {"a": 1, "b": 2})
 
@@ -276,7 +276,7 @@ class TestSquare_y(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
             Square(1, 3, range(5))
 
-    def test_bytes_y(self):
+             def test_bytes_y(self):
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
             Square(1, 3, b'Python')
 
@@ -284,7 +284,7 @@ class TestSquare_y(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
             Square(1, 3, bytearray(b'abcdefg'))
 
-    def test_memoryview_y(self):
+              def test_memoryview_y(self):
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
             Square(1, 3, memoryview(b'abcedfg'))
 
@@ -308,7 +308,7 @@ class TestSquare_order_of_initialization(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Square("invalid size", "invalid x")
 
-    def test_size_before_y(self):
+def test_size_before_y(self):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Square("invalid size", 1, "invalid y")
 
@@ -344,7 +344,6 @@ class TestSquare_stdout(unittest.TestCase):
     @staticmethod
     def capture_stdout(sq, method):
         """Captures and returns text printed to stdout.
-
         Args:
             sq (Square): The Square ot print to stdout.
             method (str): The method to run on sq.
@@ -432,9 +431,10 @@ class TestSquare_update_args(unittest.TestCase):
     def test_update_args_one(self):
         s = Square(10, 10, 10, 10)
         s.update(89)
+         s.update(89)
         self.assertEqual("[Square] (89) 10/10 - 10", str(s))
 
-    def test_update_args_two(self):
+def test_update_args_two(self):
         s = Square(10, 10, 10, 10)
         s.update(89, 2)
         self.assertEqual("[Square] (89) 10/10 - 2", str(s))

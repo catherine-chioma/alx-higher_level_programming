@@ -9,7 +9,7 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initialize a new Rectangle.
 
-         Args:
+                Args:
             width (int): The width of the new Rectangle.
             height (int): The height of the new Rectangle.
             x (int): The x coordinate of the new Rectangle.
@@ -89,16 +89,16 @@ class Rectangle(Base):
             print("")
             return
 
-        [print("") for y in range(self.y)]
+         [print("") for y in range(self.y)]
         for h in range(self.height):
             [print(" ", end="") for x in range(self.x)]
             [print("#", end="") for w in range(self.width)]
             print("")
 
-    def update(self, *args, **kwargs):
+             def update(self, *args, **kwargs):
         """Update the Rectangle.
 
-Args:
+         Args:
             *args (ints): New attribute values.
                 - 1st argument represents id attribute
                 - 2nd argument represents width attribute
