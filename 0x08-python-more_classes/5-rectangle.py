@@ -15,7 +15,7 @@ class Rectangle:
         self.width = width
         self.height = height
 
-        @property
+    @property
     def width(self):
         """Get/set the width of the Rectangle."""
         return self.__width
@@ -28,7 +28,7 @@ class Rectangle:
             raise ValueError("width must be >= 0")
         self.__width = value
 
- @property
+    @property
     def height(self):
         """Get/set the height of the Rectangle."""
         return self.__height
@@ -41,7 +41,7 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = value
 
-        def area(self):
+    def area(self):
         """Return the area of the Rectangle."""
         return (self.__width * self.__height)
 
@@ -54,7 +54,7 @@ class Rectangle:
     def __str__(self):
         """Return the printable representation of the Rectangle.
 
- Represents the rectangle with the # character.
+        Represents the rectangle with the # character.
         """
         if self.__width == 0 or self.__height == 0:
             return ("")
@@ -72,6 +72,6 @@ class Rectangle:
         rect += ", " + str(self.__height) + ")"
         return (rect)
 
-def __del__(self):
+    def __del__(self):
         """Print a message for every deletion of a Rectangle."""
         print("Bye rectangle...")

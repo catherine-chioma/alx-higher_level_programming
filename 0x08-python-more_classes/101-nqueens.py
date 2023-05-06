@@ -7,9 +7,9 @@ N non-attacking queens on an NxN chessboard.
 Example:
     $ ./101-nqueens.py N
 
-    N must be an integer greater than or equal to 4.
+N must be an integer greater than or equal to 4.
 
-    Attributes:
+Attributes:
     board (list): A list of lists representing the chessboard.
     solutions (list): A list of lists containing solutions.
 
@@ -49,7 +49,7 @@ def get_solution(board):
 def xout(board, row, col):
     """X out spots on a chessboard.
 
-     All spots where non-attacking queens can no
+    All spots where non-attacking queens can no
     longer be played are X-ed out.
 
     Args:
@@ -102,7 +102,7 @@ def xout(board, row, col):
 def recursive_solve(board, row, queens, solutions):
     """Recursively solve an N-queens puzzle.
 
-     Args:
+    Args:
         board (list): The current working chessboard.
         row (int): The current working row.
         queens (int): The current number of placed queens.
@@ -114,7 +114,7 @@ def recursive_solve(board, row, queens, solutions):
         solutions.append(get_solution(board))
         return (solutions)
 
-for c in range(len(board)):
+    for c in range(len(board)):
         if board[row][c] == " ":
             tmp_board = board_deepcopy(board)
             tmp_board[row][c] = "Q"
@@ -122,10 +122,10 @@ for c in range(len(board)):
             solutions = recursive_solve(tmp_board, row + 1,
                                         queens + 1, solutions)
 
-             return (solutions)
+    return (solutions)
 
 
-         if __name__ == "__main__":
+if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: nqueens N")
         sys.exit(1)
